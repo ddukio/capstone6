@@ -96,3 +96,41 @@ model.compile(optimizer='rmsprop',
               metrics=['accuracy'])
               
 history = model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test))
+
+
+결과 :
+
+Epoch 1/10
+1875/1875 [==============================] - 79s 41ms/step - loss: 0.1410 - accuracy: 0.9557 - val_loss: 0.0471 - val_accuracy: 0.9870
+Epoch 2/10
+1875/1875 [==============================] - 76s 41ms/step - loss: 0.0444 - accuracy: 0.9869 - val_loss: 0.0438 - val_accuracy: 0.9865
+Epoch 3/10
+1875/1875 [==============================] - 72s 38ms/step - loss: 0.0321 - accuracy: 0.9901 - val_loss: 0.0292 - val_accuracy: 0.9911
+Epoch 4/10
+1875/1875 [==============================] - 74s 40ms/step - loss: 0.0234 - accuracy: 0.9927 - val_loss: 0.0321 - val_accuracy: 0.9910
+Epoch 5/10
+1875/1875 [==============================] - 69s 37ms/step - loss: 0.0200 - accuracy: 0.9941 - val_loss: 0.0264 - val_accuracy: 0.9922
+Epoch 6/10
+1875/1875 [==============================] - 69s 37ms/step - loss: 0.0168 - accuracy: 0.9952 - val_loss: 0.0338 - val_accuracy: 0.9908
+Epoch 7/10
+1875/1875 [==============================] - 71s 38ms/step - loss: 0.0137 - accuracy: 0.9962 - val_loss: 0.0346 - val_accuracy: 0.9912
+Epoch 8/10
+1875/1875 [==============================] - 71s 38ms/step - loss: 0.0114 - accuracy: 0.9969 - val_loss: 0.0369 - val_accuracy: 0.9922
+Epoch 9/10
+1875/1875 [==============================] - 69s 37ms/step - loss: 0.0106 - accuracy: 0.9973 - val_loss: 0.0387 - val_accuracy: 0.9921
+Epoch 10/10
+1875/1875 [==============================] - 69s 37ms/step - loss: 0.0100 - accuracy: 0.9973 - val_loss: 0.0498 - val_accuracy: 0.9903
+
+
+
+해석:
+
+
+
+위 결과는 총 10개의 epoch으로 학습을 진행한 결과입니다. 각 epoch마다 train 데이터셋으로 학습을 하고, validation 데이터셋으로 모델의 성능을 평가합니다.
+
+첫 번째 epoch에서 train 데이터셋의 loss는 0.1410, accuracy는 0.9557이며, validation 데이터셋의 loss는 0.0471, accuracy는 0.9870입니다. 즉, 첫 번째 epoch에서는 train 데이터셋의 loss와 accuracy는 validation 데이터셋의 loss와 accuracy에 비해 상대적으로 큰 차이가 있습니다.
+
+그 다음 epoch에서는 train 데이터셋의 loss와 accuracy가 점차적으로 개선되어가며, validation 데이터셋의 loss와 accuracy도 개선되어가는 것을 볼 수 있습니다. 특히, 5번째 epoch에서 validation 데이터셋의 accuracy가 0.9922로 가장 높게 나오는 것을 확인할 수 있습니다.
+
+최종 epoch에서는 train 데이터셋의 loss는 0.0100, accuracy는 0.9973이며, validation 데이터셋의 loss는 0.0498, accuracy는 0.9903입니다. 즉, train 데이터셋에서는 매우 높은 성능을 보이지만, validation 데이터셋에서는 약간의 overfitting이 발생한 것으로 보입니다.
